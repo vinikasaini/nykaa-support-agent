@@ -1,0 +1,21 @@
+Nykaa Support Knowledge Base
+Document: Customer Support Escalation Policy
+
+Customers should contact support when an issue cannot be resolved through the
+standard self-service options.
+
+Support may require the customer's order ID, registered contact information,
+transaction details, or other relevant information to investigate the issue.
+
+Issues involving damaged products, missing items, incorrect orders, failed
+payments, delayed refunds, or unresolved delivery problems may require
+additional investigation.
+
+If an issue cannot be resolved at the first level of support, it may be
+escalated to the appropriate support team for further review.
+
+Customers should provide accurate information and avoid submitting multiple
+requests for the same issue unless instructed by support.
+
+The final resolution depends on the order details, applicable policies, and
+the outcome of the investigation.

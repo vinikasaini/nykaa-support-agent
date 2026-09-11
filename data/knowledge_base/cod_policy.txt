@@ -1,0 +1,20 @@
+Nykaa Support Knowledge Base
+Document: Cash on Delivery Policy
+
+Cash on Delivery (COD) may be available only for eligible products,
+locations, and orders.
+
+The availability of COD is determined during checkout based on the delivery
+address, product eligibility, and other applicable conditions.
+
+Customers should have the required payment amount available when the order is
+delivered.
+
+If a COD order is returned and the return is approved, the refund process may
+require the customer to provide valid bank account or other payment details.
+
+COD availability can change depending on the customer's location, order
+value, product type, or other operational conditions.
+
+If COD is not available for an order, the customer can select another payment
+method shown during checkout.

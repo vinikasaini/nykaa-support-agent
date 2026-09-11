@@ -1,0 +1,25 @@
+Nykaa Support Knowledge Base
+Document: Payment Policy
+
+Customers can use the payment methods displayed as available during the
+checkout process.
+
+A payment may fail because of incorrect payment information, insufficient
+funds, bank restrictions, technical issues, or temporary payment gateway
+problems.
+
+If a payment fails, customers should first verify their payment details and
+check whether the amount has been deducted from their account.
+
+If money was deducted but the order was not successfully placed, the payment
+may be reversed or refunded according to the applicable payment process.
+
+Customers should avoid making repeated payments if they are unsure whether
+the previous transaction was successful.
+
+For payment-related issues, customers should keep the transaction reference,
+order details, and relevant payment information available when contacting
+support.
+
+The final payment status should be checked through the customer's order
+details or the applicable payment provider.
