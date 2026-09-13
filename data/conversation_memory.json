@@ -1,0 +1,10 @@
+[
+    {
+        "role": "user",
+        "content": "My email is v*****@gmail.com. How can I return a product?"
+    },
+    {
+        "role": "assistant",
+        "content": "I don't know. The retrieved context does not support an answer to this question."
+    }
+]

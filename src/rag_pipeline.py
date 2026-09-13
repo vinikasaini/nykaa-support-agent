@@ -22,15 +22,18 @@ vector_store = Chroma(
 
 
 def cosine_similarity(vector_a, vector_b):
+
     vector_a = np.array(vector_a)
     vector_b = np.array(vector_b)
 
     return np.dot(vector_a, vector_b) / (
-        np.linalg.norm(vector_a) * np.linalg.norm(vector_b)
+        np.linalg.norm(vector_a) *
+        np.linalg.norm(vector_b)
     )
 
 
 def retrieve_context(query):
+
     query_vector = embedding_model.embed_query(query)
 
     results = vector_store.get(
@@ -44,6 +47,7 @@ def retrieve_context(query):
         results["embeddings"],
         results["metadatas"]
     ):
+
         similarity = cosine_similarity(
             query_vector,
             embedding
@@ -64,6 +68,7 @@ def retrieve_context(query):
 
 
 def mock_llm(query, retrieved_chunks):
+
     context = "\n\n".join(
         chunk["content"]
         for chunk in retrieved_chunks
@@ -83,17 +88,66 @@ def answer_query(query):
 
     retrieved_chunks = retrieve_context(query)
 
+    if not retrieved_chunks:
+        return {
+            "answer": (
+                "I don't know. "
+                "I could not find sufficiently relevant "
+                "information in the knowledge base."
+            ),
+            "retrieved_chunks": [],
+            "top_similarity": 0.0,
+            "grounded": False
+        }
+
     top_similarity = retrieved_chunks[0]["similarity"]
+
+    if top_similarity < THRESHOLD:
+
+        return {
+            "answer": (
+                "I don't know. "
+                "I could not find sufficiently relevant "
+                "information in the knowledge base."
+            ),
+            "retrieved_chunks": retrieved_chunks,
+            "top_similarity": top_similarity,
+            "grounded": False
+        }
+
+    if MOCK_LLM:
+
+        answer = mock_llm(
+            query,
+            retrieved_chunks
+        )
+
+        return {
+            "answer": answer,
+            "retrieved_chunks": retrieved_chunks,
+            "top_similarity": top_similarity,
+            "grounded": True
+        }
+
+
+if __name__ == "__main__":
+
+    query = input("\nEnter your question: ")
+
+    result = answer_query(query)
 
     print("\nCustomer Question:")
     print(query)
 
     print("\nTop-1 Cosine Similarity:")
-    print(round(top_similarity, 4))
+    print(round(result["top_similarity"], 4))
 
     print("\nRetrieved Context:")
 
-    for index, chunk in enumerate(retrieved_chunks, start=1):
+    for index, chunk in enumerate(
+        result["retrieved_chunks"],
+        start=1
+    ):
 
         print(f"\n--- Result {index} ---")
         print("Source:", chunk["source"])
@@ -103,28 +157,5 @@ def answer_query(query):
         )
         print(chunk["content"])
 
-    if top_similarity < THRESHOLD:
-
-        print("\nFinal Answer:")
-        print(
-            "I don't know. "
-            "I could not find sufficiently relevant information "
-            "in the knowledge base."
-        )
-
-        return
-
-    if MOCK_LLM:
-
-        answer = mock_llm(
-            query,
-            retrieved_chunks
-        )
-
-        print("\nFinal Answer:")
-        print(answer)
-
-
-query = input("\nEnter your question: ")
-
-answer_query(query)
+    print("\nFinal Answer:")
+    print(result["answer"])

@@ -153,3 +153,19 @@ df = pd.DataFrame(orders)
 df.to_csv("data/orders.csv", index=False)
 
 print("\nDataset saved to data/orders.csv")
+
+
+days_values = [
+    order["days_since_created"]
+    for order in orders
+]
+
+sorted_days = sorted(days_values)
+
+percentile_80_index = int(0.8 * len(sorted_days)) - 1
+percentile_80 = sorted_days[percentile_80_index]
+
+print("\nDays since created distribution:")
+print("Minimum:", min(days_values))
+print("Maximum:", max(days_values))
+print("80th percentile:", percentile_80)
