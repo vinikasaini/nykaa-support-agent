@@ -6,5 +6,45 @@
     {
         "role": "assistant",
         "content": "I don't know. The retrieved context does not support an answer to this question."
+    },
+    {
+        "role": "user",
+        "content": "Can I cancel my order before it is dispatched?"
+    },
+    {
+        "role": "assistant",
+        "content": "I don't know which order you mean. Please provide an order ID such as NYK001."
+    },
+    {
+        "role": "user",
+        "content": "Can I cancel my order before it is dispatched for order ID NYK001?"
+    },
+    {
+        "role": "assistant",
+        "content": "Order status: Delivered\nOrder value: \u20b92175\nEscalation score: 1.0\nRecommended escalation: True"
+    },
+    {
+        "role": "user",
+        "content": "How many days do I have to request a return?"
+    },
+    {
+        "role": "assistant",
+        "content": "MOCK_LLM ANSWER\n\nQuestion: How many days do I have to request a return?\n\nAnswer based only on retrieved context:\nTo request a return, the customer should use the order details available in\ntheir account and select the applicable return option.\n\nAfter a return request is submitted, the product may be inspected before the\nreturn is approved.\n\nIf the return is approved, a reverse pickup may be arranged where available.\nThe refund process starts after the returned product passes the required\ninspection.\n\nNykaa Support Knowledge Base\nDocument: Return Policy\n\nCustomers can request a return for eligible products within 7 days of delivery.\n\nThe product must be unused, unopened, and in its original packaging with all\noriginal tags and accessories intact.\n\nCertain products may not be eligible for return due to hygiene or safety\nconsiderations. These may include opened cosmetics, personal care products,\nand other products where resale is not appropriate.\n\nNykaa Support Knowledge Base\nDocument: Refund Policy\n\nRefunds are initiated after an approved return has been received and the\nreturned product has successfully completed the required inspection.\n\nThe time taken for the refund to reach the customer depends on the original\npayment method and the customer's bank or payment provider.\n\nFor prepaid orders, the refund is generally processed back to the original\npayment method."
+    },
+    {
+        "role": "user",
+        "content": "What is the status of NYK002?"
+    },
+    {
+        "role": "assistant",
+        "content": "Order status: Shipped\nOrder value: \u20b92897\nEscalation score: 0.1\nRecommended escalation: False"
+    },
+    {
+        "role": "user",
+        "content": "What is the weather today?"
+    },
+    {
+        "role": "assistant",
+        "content": "I don't know. The retrieved context does not support an answer to this question."
     }
 ]
